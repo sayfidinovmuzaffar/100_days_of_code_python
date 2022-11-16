@@ -1,0 +1,78 @@
+import random
+
+print("What do you choose?")
+userInput = int(input("Type '0' for Rock, '1' for Paper and '2' for Scissors\n"))
+
+rock = '''
+Rock
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+
+'''
+
+paper = '''
+Paper
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+
+'''
+
+scissors = '''
+Scissors
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+
+'''
+
+if userInput >=3 or userInput <0:
+    print("Your typed an invalid number, please try again")
+else:
+    computerChoise = random.randint(0, 2)
+    strValueOfUserInput = ""
+    strComputerChoise = ""
+
+    if userInput == 0:
+        strValueOfUserInput = rock
+    elif userInput == 1:
+        strValueOfUserInput = paper
+    elif userInput == 2:
+        strValueOfUserInput = scissors
+
+    if computerChoise == 0:
+        strComputerChoise = rock
+    elif computerChoise == 1:
+        strComputerChoise = paper
+    elif computerChoise == 2:
+        strComputerChoise = scissors
+
+    if userInput == computerChoise:
+        print(f"\nTry again, you both chose {strValueOfUserInput}")
+    elif userInput == 0 and computerChoise == 1:
+        print(f"\nYour {strValueOfUserInput} is weeker against computer's {strComputerChoise}")
+    elif userInput == 1 and computerChoise == 0:
+        print(f"\nYour {strValueOfUserInput} wins computer's {strComputerChoise}")
+
+    elif userInput == 1 and computerChoise == 2:
+        print(f"\nYour {strValueOfUserInput} is weeker against computer's {strComputerChoise}")
+    elif userInput == 2 and computerChoise == 1:
+        print(f"\nYour {strValueOfUserInput} wins computer's {strComputerChoise}")
+
+    elif userInput == 2 and computerChoise == 0:
+        print(f"\nYour {strValueOfUserInput} is weeker against computer's {strComputerChoise}")
+    elif userInput == 0 and computerChoise == 2:
+        print(f"\nYour {strValueOfUserInput} wins computer's {strComputerChoise}")
+
+
+
